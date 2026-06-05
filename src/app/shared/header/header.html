@@ -1,0 +1,19 @@
+<div class="left">
+  <a href="/"><img class="logo" src="/assets/imgs/logo.png" alt="" /></a>
+</div>
+<div class="right">
+  <nav>
+    <a href="#about">About me</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Portfolio</a>
+  </nav>
+  <div class="language">
+    <button (click)="toggleLanguage('DE')" class="btn" [class.active]="currentLanguage === 'DE'">
+      DE
+    </button>
+
+    <button (click)="toggleLanguage('EN')" class="btn" [class.active]="currentLanguage === 'EN'">
+      EN
+    </button>
+  </div>
+</div>

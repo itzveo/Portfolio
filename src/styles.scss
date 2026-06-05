@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins";
+  color: white;
+  text-decoration: none;
+  background-color: #141d2f;
+}
+
+body {
+  --sb-track-color: #9747ff;
+  --sb-thumb-color: #70e61c;
+  --sb-size: 12px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 8px;
+  border: 2px solid #6e00ff;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+button {
+  border-radius: 10px;
+  padding: 15px 30px;
+  border: unset;
+  font: 23px "Poppins";
+}
+
+$g: #70e61c;
+$p: #9747ff;
+
+@mixin dFlex($jc: center, $ai: center) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("/assets/fonts/Poppins-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/Montserrat-Regular.ttf") format("ttf");
+}

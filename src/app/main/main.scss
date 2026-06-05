@@ -1,0 +1,7 @@
+@import "./../../styles.scss";
+
+:host{
+    @include dFlex();
+    flex-direction: column;
+    gap: 110px;
+}

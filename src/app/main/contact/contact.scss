@@ -1,0 +1,218 @@
+@use './../../../styles.scss' as *;
+
+:host {
+  @include dFlex();
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+}
+
+.header {
+  width: 100%;
+  @include dFlex($jc: flex-start);
+  gap: 32px;
+  padding-bottom: 40px;
+  > div {
+    height: 4px;
+    width: 535px;
+    background-color: $p;
+  }
+  > h1 {
+    font-family: 'Poppins-Bold';
+    font-size: 90px;
+  }
+}
+
+.content {
+  @include dFlex($jc: space-between, $ai: flex-start);
+  flex-direction: row;
+}
+
+.left,
+.right {
+  @include dFlex($ai: flex-start);
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding-inline: 100px;
+}
+
+.form {
+  @include dFlex($ai: flex-start, $jc: flex-start);
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  input,
+  .msg {
+    width: 100%;
+    padding-inline: 25px;
+    padding-block: 15px;
+    outline: none !important;
+    border: 1px solid $p;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    transition: border-color 0.2s ease;
+  }
+
+  input.valid {
+    border-color: $g;
+    background-image: url('/assets/icons/done.svg');
+    background-position: right 15px center;
+  }
+
+  input.invalid {
+    border-color: red;
+    background-image: url('/assets/icons/error.svg');
+    background-position: right 15px center;
+  }
+
+  textarea.valid {
+    border-color: $g;
+    background-image: url('/assets/icons/done.svg');
+    background-position: right 15px top 15px;
+  }
+
+  textarea.invalid {
+    border-color: red;
+    background-image: url('/assets/icons/error.svg');
+    background-position: right 15px top 15px;
+  }
+
+  input.valid::placeholder,
+  input.invalid::placeholder,
+  textarea.valid::placeholder,
+  textarea.invalid::placeholder {
+    color: transparent;
+  }
+
+  > span {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: -20px;
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  .pp-msg {
+    display: none;
+    color: red;
+    margin-top: -20px;
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  > div {
+    @include dFlex($jc: flex-start);
+    flex-direction: row;
+    gap: 8px;
+    height: 27px;
+  }
+
+  button {
+    margin-left: 20%;
+    border: unset;
+    border-radius: 10px;
+    padding: 15px 30px;
+    background-color: #b6b6b6;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    &.enabled {
+      background-color: $g;
+      cursor: pointer;
+      pointer-events: auto;
+      color: #141d2f;
+
+      &:hover {
+        background-color: $p;
+        transform: scale(1.15);
+        transform-origin: top center;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+
+  .msg {
+    height: 202px;
+    resize: none;
+    background-image: url('/assets/icons/corner.svg');
+    background-position: bottom 15px right 15px;
+    background-size: 13px;
+
+    &.valid {
+      background-image: url('/assets/icons/done.svg'), url('/assets/icons/corner.svg');
+      background-size: 20px, 13px;
+      background-position: right 15px top 15px, bottom 15px right 15px;
+    }
+
+    &.invalid {
+      background-image: url('/assets/icons/error.svg'), url('/assets/icons/corner.svg');
+      background-size: 20px, 13px;
+      background-position: right 15px top 15px, bottom 15px right 15px;
+    }
+  }
+
+  .checkbox {
+    @include dFlex();
+    background: transparent;
+    position: relative;
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+      background-color: #183771;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    > img {
+      z-index: 1;
+      width: 18px;
+      height: 18px;
+      background-color: transparent;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  }
+}
+
+.return {
+  @include dFlex($jc: flex-end);
+  flex-direction: row;
+  width: 100%;
+  padding-top: 50px;
+  padding-right: 100px;
+}
+
+.up {
+  @include dFlex();
+  width: 39px;
+  height: 39px;
+  border: 2px solid white;
+  border-radius: 41px;
+  transform: rotate(180deg);
+  > .green {
+    display: none;
+  }
+  &:hover {
+    border: 2px solid $g;
+    color: $g;
+    > .green {
+      display: flex;
+    }
+    > img {
+      display: none;
+    }
+  }
+}

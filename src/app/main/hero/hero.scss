@@ -1,0 +1,120 @@
+@import './../../../styles.scss';
+
+:host {
+  @include dFlex();
+  height: calc(100vh - 110px);
+  width: 100%;
+  background-color: transparent;
+}
+
+.info {
+  @include dFlex();
+  width: 100%;
+  height: 646px;
+  padding-right: 100px;
+  background-color: transparent;
+  z-index: 9;
+}
+
+.left {
+  @include dFlex($jc: flex-start, $ai: flex-end);
+  width: fit-content;
+  height: 100%;
+  background-color: transparent;
+  > .social-wrapper {
+    @include dFlex();
+    gap: 32px;
+    background: transparent;
+    > .line {
+      height: 4px;
+      width: 100px;
+      background-color: $p;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+    > a {
+      background: transparent;
+      > img {
+        object-fit: cover;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+      }
+    }
+    > span {
+      font: 23px 'Poppins';
+      background: transparent;
+    }
+  }
+}
+
+.right {
+  background-color: transparent;
+  @include dFlex($jc: space-between, $ai: flex-end);
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  position: relative;
+  > .text-wrapper {
+    background-color: transparent;
+    @include dFlex();
+    flex-direction: column;
+    gap: 44px;
+    height: fit-content;
+    > button {
+      background-color: $g;
+      transition: ease-out 0.3s;
+      &:hover {
+        transform: scale(1.4);
+        transform-origin: top center;
+        background-color: $p;
+        font: 18.4px 'Poppins';
+      }
+    }
+    > .text {
+      @include dFlex();
+      gap: 35px;
+      background-color: transparent;
+      > div {
+        background-color: transparent;
+      }
+      > h2 {
+        writing-mode: sideways-lr;
+        text-align: start;
+        font: 64px 'Poppins';
+        background-color: transparent;
+      }
+      > div > h1 {
+        font: 90px 'Poppins-Bold';
+        background-color: transparent;
+        line-height: 120%;
+      }
+      > div > h3 {
+        background-color: transparent;
+        font: 58px 'Poppins';
+        color: $p;
+      }
+    }
+  }
+  > .span-wrapper {
+    @include dFlex();
+    gap: 3px;
+    writing-mode: vertical-rl;
+    > span {
+      font: 23px 'Poppins';
+    }
+    > img {
+      object-fit: cover;
+      width: 24px;
+      height: 24px;
+      padding: 4px;
+    }
+  }
+}
+
+.hero-bg {
+  position: absolute;
+  top: 268px;
+  width: 100%;
+  height: 1080px;
+}
